@@ -1,1 +1,1 @@
-# friendify
+# muziqala
