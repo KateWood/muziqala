@@ -9,8 +9,24 @@ FactoryGirl.define do
 			"person#{idx}@gmail.com"
 		end
 
+		factory :no_first_name do
+			first_name nil
+		end
+
+		factory :no_last_name do
+			last_name nil
+		end
+
 		factory :no_email do
 			email nil
+		end
+
+		factory :no_password do
+			password nil
+		end
+
+		factory :no_password_confirmation do
+			password_confirmation nil
 		end
 	end
 end
