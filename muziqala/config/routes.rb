@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'artists/index'
-
-  get 'artists/show'
+  get 'artists' => 'artists#index'
+  get 'artists/:id' => 'artists#show', as: 'artist'
 
   get "users" => "users#index"
   get "users/new" => "users#new"
