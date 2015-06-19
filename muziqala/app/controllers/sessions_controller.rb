@@ -3,11 +3,17 @@ class SessionsController < ApplicationController
 	def new
 	end
 
+	# Defines user for show page
+	def show
+		redirect_to root_path unless session['auth']
+		@auth = session['auth']
+	end
+
 	# Creates a session for a user logged in via Facebook
 	def create_auth
 		@auth = request.env['omniauth.auth']
 		session['auth'] = @auth
-		redirect_to users_path
+		redirect_to sessions_show_path
 	end
 
 	# Creates a session for a user logged in manually (bcrypt)
@@ -19,6 +25,12 @@ class SessionsController < ApplicationController
 		else
 			render :new
 		end
+	end
+
+	# Ends auth session at logout
+	def destroy_auth
+		session['auth'] = nil
+		redirect_to root_path
 	end
 
 	# Ends user session at logout
