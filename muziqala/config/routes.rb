@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'artists/index'
+
+  get 'artists/show'
+
   get "users" => "users#index"
   get "users/new" => "users#new"
   post "users" => "users#create"
