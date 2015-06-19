@@ -13,11 +13,15 @@
 	<ul class="nav navbar-nav">
 		<li><a href="/">Home</a></li>
 		<% if session['auth'] %>
-			<li><a href="/sessions/show">Profile</a></li>
-			<li><a href="/auth/logout">Logout</a></li>
+			<li><%= link_to 'Profile', "/auth/facebook" %></li>
+			<li><%= link_to 'Logout', auth_logout_path, method: :delete %></li>
 		<% else %>
-			<li><a href="/auth/facebook">Login via Facebook</a></li>
+
+			
 			<li><%= link_to 'Login', new_session_path %></li>
+
+			<li><%= link_to 'Login via Facebook', "/auth/facebook" %></li>
+
 		<% end %>
 	</ul>
 </nav>

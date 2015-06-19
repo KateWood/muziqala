@@ -1,4 +1,5 @@
 FactoryGirl.define do
+	# Creates sample data for testing
 	factory :user do
 		first_name "MyString"
 		last_name "MyString"

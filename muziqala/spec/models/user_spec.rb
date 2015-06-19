@@ -1,6 +1,8 @@
 require "rails_helper"
 
 RSpec.describe User, type: :model do
+
+	# Tests to make sure model validations prevent user from creating an account without all required fields
 	it "is invalid without an email address" do
 		user = FactoryGirl.build(:no_email)
 		expect(user).not_to be_valid
