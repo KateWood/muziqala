@@ -21,6 +21,16 @@
 	</ul>
 </nav>
 
+<%= form_tag artists_path, method: "get", html: { class: "form" } do %>
+ <div class="form-group col-xs-4">
+   <%= text_field_tag(:artist_name, "", placeholder: "Enter artist name", class: "form-control") %>
+   <%= submit_tag "Search", class: "btn btn-primary" %>
+   all: <%= radio_button_tag "all", value = "all" %>
+   artist: <%= radio_button_tag 'artist', value = "artist"  %>
+   album: <%= radio_button_tag 'album', value = "album"  %>
+   track title: <%= radio_button_tag 'track', value = "track"  %>
+ </div>
+<% end %>
 
 <%= yield %>
 
