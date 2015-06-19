@@ -11,9 +11,10 @@ Rails.application.routes.draw do
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
   
-  get "/auth/:provider/callback" => "sessions#create"
-  post "/auth/login" => "sessions#create", as: 'create_auth'
-  delete "/auth/logout" => "sessions#destroy"
+  get "sessions/show"
+  get "/auth/:provider/callback" => "sessions#create_auth"
+  post "/auth/login" => "sessions#create_auth"
+  delete "/auth/logout" => "sessions#destroy_auth"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
