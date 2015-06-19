@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 	def new
 	end
 
+	# Defines user for show page
 	def show
 		redirect_to root_path unless session['auth']
 		@auth = session['auth']
@@ -26,6 +27,7 @@ class SessionsController < ApplicationController
 		end
 	end
 
+	# Ends auth session at logout
 	def destroy_auth
 		session['auth'] = nil
 		redirect_to root_path
