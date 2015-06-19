@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   delete "logout" => "sessions#destroy"
   
   get "/auth/:provider/callback" => "sessions#create"
+  post "/auth/login" => "sessions#create", as: 'create_auth'
   delete "/auth/logout" => "sessions#destroy"
 
   # The priority is based upon order of creation: first created -> highest priority.
