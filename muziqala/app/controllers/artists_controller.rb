@@ -1,15 +1,20 @@
 class ArtistsController < ApplicationController
   def index
+    @all = RSpotify::Album.search(params[:search_keywords]) && 
+            RSpotify::Artist.search(params[:search_keywords]) &&
+            RSpotify::Track.search(params[:search_keywords])
 
-    if params[:album]
-      @artists = RSpotify::Album.search(params[:artist_name])
-    elsif  params[:artist]
-      @artists = RSpotify::Artist.search(params[:artist_name])
-    elsif  params[:track]
-      @artists = RSpotify::Track.search(params[:artist_name])
+    if params[:search] == "artist"
+      @artists = RSpotify::Artist.search(params[:search_keywords])
+    elsif  params[:search] == "album"
+      @albums = RSpotify::Album.search(params[:search_keywords])
+    elsif  params[:search] == "track"
+      @tracks = RSpotify::Track.search(params[:search_keywords])
+    elsif params[:search] == "all"
+      @all
     # if !params[:artist_name].empty?
     #  @artists = RSpotify::Artist.search(params[:artist_name])
-   else
+    else
      redirect_to root_path
    end
   end
