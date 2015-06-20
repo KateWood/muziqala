@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post "login" => "sessions#create", as: :new_session
   delete "logout" => "sessions#destroy"
   
+  get '/auth/spotify/callback' => 'users#spotify'
+
   get "sessions/show"
   get "/auth/:provider/callback" => "sessions#create_auth"
   post "/auth/login" => "sessions#create_auth"

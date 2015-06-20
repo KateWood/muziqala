@@ -15,6 +15,8 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+RSpotify::authenticate(ENV["spotify_client_id"], ENV["spotify_secret"])
+
 module Muziqala
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
