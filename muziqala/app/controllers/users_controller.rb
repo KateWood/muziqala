@@ -44,9 +44,9 @@ class UsersController < ApplicationController
 		spotify_user.remove_tracks!(tracks)
 
 		# Use Spotify Follow features
-		spotify_user.follow(playlist)
-		spotify_user.follows?(artists)
-		spotify_user.unfollow(users)
+		# spotify_user.follow(playlist)
+		# spotify_user.follows?(artists)
+		# spotify_user.unfollow(users)
 
 		# Check doc for more
 	end
