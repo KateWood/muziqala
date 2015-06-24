@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150619213128) do
+ActiveRecord::Schema.define(version: 20150624015200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "playlists", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_playlists", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "playlist_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "user_playlists", ["playlist_id"], name: "index_user_playlists_on_playlist_id", using: :btree
+  add_index "user_playlists", ["user_id"], name: "index_user_playlists_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -26,4 +42,6 @@ ActiveRecord::Schema.define(version: 20150619213128) do
     t.string   "provider"
   end
 
+  add_foreign_key "user_playlists", "playlists"
+  add_foreign_key "user_playlists", "users"
 end
