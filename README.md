@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/KateWood/muziqala.svg?branch=master)](https://travis-ci.org/KateWood/muziqala)
+
 # muziqala
 
 Muziqala is an app that allows users to link their accounts for other streaming services and listen to all of their music in one place.
