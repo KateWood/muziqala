@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150624015200) do
+ActiveRecord::Schema.define(version: 20150624215757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,26 +22,26 @@ ActiveRecord::Schema.define(version: 20150624015200) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_playlists", force: :cascade do |t|
-    t.integer  "user_id"
+  create_table "playlistusers", force: :cascade do |t|
     t.integer  "playlist_id"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  add_index "user_playlists", ["playlist_id"], name: "index_user_playlists_on_playlist_id", using: :btree
-  add_index "user_playlists", ["user_id"], name: "index_user_playlists_on_user_id", using: :btree
+  add_index "playlistusers", ["playlist_id"], name: "index_playlistusers_on_playlist_id", using: :btree
+  add_index "playlistusers", ["user_id"], name: "index_playlistusers_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "provider"
+    t.string   "display_nameuser_uri"
+    t.string   "token"
+    t.string   "refresh_token"
+    t.string   "image_url"
+    t.string   "spotify_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
-  add_foreign_key "user_playlists", "playlists"
-  add_foreign_key "user_playlists", "users"
+  add_foreign_key "playlistusers", "playlists"
+  add_foreign_key "playlistusers", "users"
 end
