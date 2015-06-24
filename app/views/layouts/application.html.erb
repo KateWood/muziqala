@@ -10,33 +10,32 @@
 <body>
 
 <nav class="navbar navbar-inverse navbar-static-top">
+	
 	<ul class="nav navbar-nav">
-		<li><a href="/">Home</a></li>
+		<li><a href="/">muziqala</a></li>
+		
 		<% if session['auth'] %>
 			<li><%= link_to 'Profile', "/auth/facebook" %></li>
 			<li><%= link_to 'Logout', auth_logout_path, method: :delete %></li>
 		<% else %>
-
-			
-			<li><%= link_to 'Login', new_session_path %></li>
-
-			<li><%= link_to 'Login via Facebook', "/auth/facebook" %></li>
 			<li><%= link_to 'Sign in with Spotify', '/auth/spotify' %></li>
-
 		<% end %>
 	</ul>
+	<div class="search">
+		<%= form_tag artists_path, method: "get", html: { class: "form" } do %>
+		 <div class="form-group col-xs-4">
+		   <%= text_field_tag(:search_keywords, "", placeholder: "Enter keywords", class: "form-control") %>
+		   <%= submit_tag "Search", class: "btn btn-primary" %>
+		   all: <%= radio_button_tag :search, type = "all" %>
+		   artist: <%= radio_button_tag :search, type = "artist"  %>
+		   album: <%= radio_button_tag :search, type = "album"  %>
+		   track title: <%= radio_button_tag :search, type = "track"  %>
+		 </div>
+	<% end %>
+	</div>
 </nav>
 
-<%= form_tag artists_path, method: "get", html: { class: "form" } do %>
- <div class="form-group col-xs-4">
-   <%= text_field_tag(:search_keywords, "", placeholder: "Enter keywords", class: "form-control") %>
-   <%= submit_tag "Search", class: "btn btn-primary" %>
-   all: <%= radio_button_tag :search, type = "all" %>
-   artist: <%= radio_button_tag :search, type = "artist"  %>
-   album: <%= radio_button_tag :search, type = "album"  %>
-   track title: <%= radio_button_tag :search, type = "track"  %>
- </div>
-<% end %>
+
 
 <%= yield %>
 
