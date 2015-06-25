@@ -2,10 +2,11 @@
 <html>
 <head>
 	<title>Muziqala</title>
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 </head>
 <body>
 
@@ -27,12 +28,35 @@
 		<%= form_tag artists_path, method: "get", html: { class: "form" } do %>
 		 <div class="form-group col-xs-4" class="search">
 		   <%= text_field_tag(:search_keywords, "", placeholder: "Enter keywords", class: "form-control") %>
-		   <%= submit_tag "Search", class: "btn btn-primary" %>
-		   all: <%= radio_button_tag :search, type = "all" %>
+			<div class="dropdown">
+			  <!-- <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			    Dropdown
+			    <span class="caret"></span>
+			  </button> -->
+			  <select class="form-control">
+				  <option>All</option>
+				  <option>Artist</option>
+				  <option>Album</option>
+				  <option>Track</option>
+			  </select>
+			  
+
+			  <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			    <li><a href="#">all: <%= radio_button_tag :search, type = "all" %></a></li>
+			    <li><a href="#">artist: <%= radio_button_tag :search, type = "artist"  %></a></li>
+			    <li><a href="#">album: <%= radio_button_tag :search, type = "album"  %></a></li>
+			    <li><a href="#">track title: <%= radio_button_tag :search, type = "track"  %></a></li>
+			  </ul> -->
+			</div>
+			<!-- all: <%= radio_button_tag :search, type = "all" %>
 		   artist: <%= radio_button_tag :search, type = "artist"  %>
 		   album: <%= radio_button_tag :search, type = "album"  %>
-		   track title: <%= radio_button_tag :search, type = "track"  %>
+		   track title: <%= radio_button_tag :search, type = "track"  %> -->
+		   
+
+		   
 		 </div>
+		 	<%= submit_tag "Search", class: "btn btn-primary" %>
 	<% end %>
 	</div>
 </nav>

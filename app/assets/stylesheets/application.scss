@@ -1,17 +1,4 @@
-.search {
-    margin: 40 auto 0 500px;
-    overflow: auto;
-    width: 1200px;
-}
-#icon {
-	background: url("img_flwr.gif");
-    background-size: 80px 60px;
-    background-repeat: no-repeat;
-    padding-top: 0px;
-}
-#sign_in {
-	margin-top: 20px;
-}
+
 
 /*.nav_links {
 	margin-top: 100px;
@@ -33,3 +20,23 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+.search {
+    margin: 5 auto 0 500px;
+    overflow: auto;
+    width: 1200px;
+}
+#icon {
+	background: url("img_flwr.gif");
+    background-size: 80px 60px;
+    background-repeat: no-repeat;
+    padding-top: 0px;
+}
+#sign_in {
+	margin-top: 20px;
+}
+.navbar {
+	margin-bottom: 0px ;
+}
+#pic1 {
+	margin-top: -180px;
+}
