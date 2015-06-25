@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   post "/auth/login" => "sessions#create_auth"
   delete "/auth/logout" => "sessions#destroy_auth"
 
+  get 'playlists/index'
+  post 'playlists' => 'playlists#create'
+  get 'playlists/new' => 'playlists#new', as: :new_playlist
+  get 'playlists/:id' => 'playlists#show', as: :playlist
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
