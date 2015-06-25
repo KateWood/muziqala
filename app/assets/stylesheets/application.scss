@@ -1,9 +1,21 @@
 .search {
-    margin: 0 auto
-    
-    
+    margin: 40 auto 0 500px;
+    overflow: auto;
+    width: 1200px;
+}
+#icon {
+	background: url("img_flwr.gif");
+    background-size: 80px 60px;
+    background-repeat: no-repeat;
+    padding-top: 0px;
+}
+#sign_in {
+	margin-top: 20px;
 }
 
+/*.nav_links {
+	margin-top: 100px;
+}*/
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

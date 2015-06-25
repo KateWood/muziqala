@@ -12,18 +12,20 @@
 <nav class="navbar navbar-inverse navbar-static-top">
 	
 	<ul class="nav navbar-nav">
-		<li><a href="/">muziqala</a></li>
+		<li id="icon"><%= link_to image_tag('world-music-icon.png') + "muziqala", login_path %></li>
+
 		
-		<% if session['auth'] %>
-			<li><%= link_to 'Profile', "/auth/facebook" %></li>
-			<li><%= link_to 'Logout', auth_logout_path, method: :delete %></li>
-		<% else %>
-			<li><%= link_to 'Sign in with Spotify', '/auth/spotify' %></li>
-		<% end %>
+			<% if session['auth'] %>
+				<li><%= link_to 'Profile', "/auth/facebook" %></li>
+				<li><%= link_to 'Logout', auth_logout_path, method: :delete %></li>
+			<% else %>
+				<li id="sign_in"><%= link_to 'Sign in with Spotify', '/auth/spotify' %></li>
+			<% end %>
+		
 	</ul>
-	<div class="search">
+	<div>
 		<%= form_tag artists_path, method: "get", html: { class: "form" } do %>
-		 <div class="form-group col-xs-4">
+		 <div class="form-group col-xs-4" class="search">
 		   <%= text_field_tag(:search_keywords, "", placeholder: "Enter keywords", class: "form-control") %>
 		   <%= submit_tag "Search", class: "btn btn-primary" %>
 		   all: <%= radio_button_tag :search, type = "all" %>
