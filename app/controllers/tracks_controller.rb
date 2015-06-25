@@ -4,6 +4,7 @@ class TracksController < ApplicationController
   end
 
   def new
+  	@track = Track.new
   end
 
   def create
