@@ -8,13 +8,8 @@ class TracksController < ApplicationController
     end
 
     def create
-        @track = Track.new(track_params)
+        @track = Track.new(params[:id])
         @track.save
-    end
-
-private
-    def track_params
-        params.require(:track).permit(:track_name, :track_uri, :artist_name, :album_id, :duration_ms)
     end
 
 end
