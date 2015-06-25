@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'tracks/index'
+
+  get 'tracks/new'
+
+  get 'tracks/create'
+
   get 'artists' => 'artists#index'
   get 'artists/:id' => 'artists#show', as: 'artist'
 
