@@ -12,7 +12,7 @@ class PlaylistsController < ApplicationController
   end
   
   def create
-    @playlist = Playlist.new(params[:name])
+    @playlist = Playlist.new(params.require(:playlist).permit(:name))
 
     if @playlist.save
       redirect_to @playlist

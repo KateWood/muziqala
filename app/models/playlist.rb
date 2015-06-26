@@ -4,4 +4,6 @@ class Playlist < ActiveRecord::Base
 
   has_many :playlisttracks
   has_many :tracks, through: :playlisttacks
+
+  validates :name, presence: true
 end

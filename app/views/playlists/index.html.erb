@@ -1,0 +1,13 @@
+<h1> View All Playlists</h1>
+
+<table>
+  <tr>
+    <th> Playlist Name</th>
+  </tr>
+
+  <% @playlist.each do |playlist| %>
+  <tr>
+    <td> <%= playlist.name %> </td>
+  </tr>
+  <% end %>
+</table>
