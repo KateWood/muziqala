@@ -1,17 +1,10 @@
-<h1 class="page-header"><%= @artist.name %></h1>
-<% @artist.albums(country: 'US').each do |album| %>
- <h3><%= album.name %></h3>
- <ul>
-   <% album.tracks.each do |track| %>
-     <li>
-       <%= track.track_number %> |
-       <%= @artist.name %> |
-       <%= track.name %> |
-       <%= track.duration_ms %> |
-       <%= link_to 'Preview Track', track.preview_url %> |
-     </li>
-   <% end %>
- </ul>
-<% end %>
+ <% if params[:type] == "artist" %>
+    <%= render 'form_artists_show' %>
 
-<%= link_to "Back", :back %>
+ <% elsif params[:type] == "album" %>
+    <%= render 'form_albums_show' %>
+
+ <% elsif params[:type] == "track" %>
+    <%= render 'form_tracks_show' %>
+    
+ <% end %>

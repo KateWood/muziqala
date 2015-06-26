@@ -28,7 +28,19 @@ class ArtistsController < ApplicationController
   end # of index action
 
   def show
-    @artist = RSpotify::Artist.find(params[:id])
+    # @all = RSpotify::Artist.find(params[:id]) &&
+    #         RSpotify::Album.find(params[:id]) &&
+    #         RSpotify::Track.find(params[:id])
+
+    if params[:type] == "artist"
+      @artist = RSpotify::Artist.find(params[:id])
+    elsif  params[:type] == "album"
+      @album = RSpotify::Album.find(params[:id])
+    elsif  params[:type] == "track"
+      @track = RSpotify::Track.find(params[:id])
+    # elsif params[:type] == "all"
+    #   @all
+     end
   end
 end
 
