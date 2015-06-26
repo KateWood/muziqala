@@ -12,7 +12,7 @@ class TracksController < ApplicationController
         if Track.where(:spotify_id => @track["id"]).first
             redirect_to artist_show_path
         else
-            @track = Track.create(:spotify_id => ###)
+            @track = Track.create(:spotify_id => @track["id"])
             redirect_to artist_show_path
         end
     end

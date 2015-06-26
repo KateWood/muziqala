@@ -4,7 +4,7 @@ feature "Search Spotify" do
 	scenario "returns search results for artist" do
       visit root_path
       fill_in "search_keywords", with: "queen"
-      choose 'search_artist'
+      select 'Artist', from: "search"
       click_button "Search"
       expect(page).to have_content("Artists Matching queen")
     end
@@ -12,7 +12,7 @@ feature "Search Spotify" do
     scenario "returns search results for album" do
       visit root_path
       fill_in "search_keywords", with: "queen"
-      choose 'search_album'
+      select 'Album', from: "search"
       click_button "Search"
       expect(page).to have_content("Albums Matching queen")
     end
@@ -20,7 +20,7 @@ feature "Search Spotify" do
     scenario "returns search results for track title" do
       visit root_path
       fill_in "search_keywords", with: "bohemian rhapsody"
-      choose 'search_track'
+      select 'Track', from: "search"
       click_button "Search"
       expect(page).to have_content("Song Titles Matching bohemian rhapsody")
     end
