@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
 
 	# Ends auth session at logout
 	def destroy_auth
-		session['auth'] = nil
+		session[:user_id] = nil
 		redirect_to root_path
 	end
 
