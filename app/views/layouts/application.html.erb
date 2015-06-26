@@ -13,12 +13,15 @@
 <nav class="navbar navbar-inverse navbar-static-top">
 	
 	<ul class="nav navbar-nav">
-		<li id="icon"><%= link_to image_tag('world-music-icon.png') + "muziqala", login_path %></li>
+		<li id="icon"><%= link_to image_tag('world-music-icon.png') + "muziqala", root_path %></li>
 
 		
-			<% if session['auth'] %>
-				<li id="profilebtn"><%= link_to 'Profile', "/auth/facebook" %></li>
+
+
+			<% if session[:user_id] %>
+				<li id="profilebtn"><%= link_to 'Profile', user_path(current_user) %></li>
 				<li id="logoutbtn"><%= link_to 'Logout', auth_logout_path, method: :delete %></li>
+
 			<% else %>
 				<li id="sign_in"><%= link_to 'Connect to Spotify', '/auth/spotify' %></li>
 				<li id="spotify_icon"><%= link_to image_tag("spotify-icon.png", height: '20', width: '20'), '/auth/spotify'%></li>
@@ -76,6 +79,5 @@
 
 
 <%= yield %>
-
 </body>
 </html>
