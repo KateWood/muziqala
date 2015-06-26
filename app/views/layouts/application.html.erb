@@ -47,10 +47,10 @@
 			</div>
 		 	
 	<% end %>
-	
-	<div id="usernav"><%= @user.display_name %></div>
-	<img id="navpic" src="<%= @user.image_url %>" />
-
+	<% if session[:user_id] %>
+		<div id="usernav"><%= current_user.display_name %></div>
+		<img id="navpic" src="<%= current_user.image_url %>" />
+	<% end %>
 	</div>
 </nav>
 				<!-- <div class="dropdown"> -->
