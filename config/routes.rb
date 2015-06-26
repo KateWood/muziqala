@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   get 'artists/:id' => 'artists#show', as: 'artist'
 
   get "users" => "users#index"
-  get "users/new" => "users#new"
-  post "users" => "users#create"
+  get "users/:id" => "users#show"
   
   get "login" => "sessions#new"
   post "login" => "sessions#create", as: :new_session
