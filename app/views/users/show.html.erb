@@ -1,1 +1,12 @@
-User Profile
+<h2>User Profile</h2>
+
+<table>
+	<tr>
+        <td>Mugshot: </td>
+        <td><img src="<%= @user.image_url %>" width="50" /></td>
+    </tr>
+    <tr>
+        <td>Name: </td>
+        <td><%= @user.display_name %></td>
+    </tr>
+</table>
