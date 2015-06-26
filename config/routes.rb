@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'artists/:id' => 'artists#show', as: 'artist'
 
   get "users" => "users#index"
-  get "users/:id" => "users#show", as: 'user_show'
+  get "users/:id" => "users#show", as: "user"
   
   get "sessions/show"
   get "/auth/:provider/callback" => "sessions#create_auth"

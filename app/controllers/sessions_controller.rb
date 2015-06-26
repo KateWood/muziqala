@@ -9,9 +9,8 @@ class SessionsController < ApplicationController
 	# Creates a session for a user logged in via Facebook
 	def create_auth
 		@auth = request.env['omniauth.auth']
-		session['auth'] = @auth
 		if User.where(:spotify_id => @auth["info"]["id"]).first
-			redirect_to sessions_show_path
+			@user = User.where(:spotify_id => @auth["info"]["id"]).first
 		else
 			@user = User.create(
 				:display_name => @auth["info"]["display_name"],
@@ -21,8 +20,9 @@ class SessionsController < ApplicationController
 				:spotify_id => @auth["info"]["id"],
 				:user_uri => @auth["info"]["uri"]
 				)
-			redirect_to sessions_show_path
 		end
+		session[:user_id] = @user.id
+		redirect_to sessions_show_path
 	end
 
 	# Ends auth session at logout
