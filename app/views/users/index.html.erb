@@ -1,7 +1,7 @@
 <h1>Users</h1>
 <ul>
 	<% @users.each do |user| %>
-		<li><%= user.full_name %></li>
+		<li><img src="<%= user.image_url %>" width="50" /> <%= user.display_name %></li>
 	<% end %>
 </ul>
 
