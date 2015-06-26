@@ -16,9 +16,12 @@
 		<li id="icon"><%= link_to image_tag('world-music-icon.png') + "muziqala", root_path %></li>
 
 		
+
+
 			<% if session[:user_id] %>
-				<li><%= link_to 'Profile', user_path(current_user) %></li>
-				<li><%= link_to 'Logout', auth_logout_path, method: :delete %></li>
+				<li id="profilebtn"><%= link_to 'Profile', user_path(current_user) %></li>
+				<li id="logoutbtn"><%= link_to 'Logout', auth_logout_path, method: :delete %></li>
+
 			<% else %>
 				<li id="sign_in"><%= link_to 'Connect to Spotify', '/auth/spotify' %></li>
 				<li id="spotify_icon"><%= link_to image_tag("spotify-icon.png", height: '20', width: '20'), '/auth/spotify'%></li>
