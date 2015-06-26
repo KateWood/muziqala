@@ -20,5 +20,12 @@ class PlaylistsController < ApplicationController
       redirect_to new_playlist_path
     end
   end
+
+  def destroy
+    @playlist = Playlist.find(params[:id])
+    @playlist.destroy
+ 
+    redirect_to @playlist
+  end
   
 end
