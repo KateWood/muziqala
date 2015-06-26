@@ -1,12 +1,12 @@
-<h2>User Profile</h2>
+<!-- <h2>User Profile</h2> -->
+<div id="usershow">
+	<div>
+		<img id="userpic" src="<%= @user.image_url %>" width="150" />
+		<div >
+   			<%= @user.display_name %>
+   		</div>
+	</div>
 
-<table>
-	<tr>
-        <td>Mugshot: </td>
-        <td><img src="<%= @user.image_url %>" width="50" /></td>
-    </tr>
-    <tr>
-        <td>Name: </td>
-        <td><%= @user.display_name %></td>
-    </tr>
-</table>
+	</div>
+	
+</div>
