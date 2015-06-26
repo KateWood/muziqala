@@ -1,6 +1,6 @@
 <h1 class="page-header"><%= @album.name %></h1>
- <%# @album.disc_number.each do |album| %>
-  <h3><%#= album.name %></h3>
+ <%# @album.artists.each do |artist| %>
+  <h3><%#= artist.name %></h3>
   <%#=@album.inspect%>
   <ul>
     <% @album.tracks.each do |track| %>
@@ -13,6 +13,6 @@
       </li>
     <% end %>
   </ul>
- <%# end %>
+ <%#  end %>
 
  <%= link_to "Back", :back %>
