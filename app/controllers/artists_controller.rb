@@ -1,6 +1,6 @@
 class ArtistsController < ApplicationController
   def index
-    #raise params.inspect
+    # raise params.inspect
     if params[:search_keywords] == ""
       redirect_to root_path
     else

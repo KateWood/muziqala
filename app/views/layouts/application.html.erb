@@ -2,41 +2,77 @@
 <html>
 <head>
 	<title>Muziqala</title>
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 </head>
 <body>
 
 <nav class="navbar navbar-inverse navbar-static-top">
+	
 	<ul class="nav navbar-nav">
-		<li><a href="/">Home</a></li>
-		<% if session['auth'] %>
-			<li><%= link_to 'Profile', "/auth/facebook" %></li>
-			<li><%= link_to 'Logout', auth_logout_path, method: :delete %></li>
-		<% else %>
+		<li id="icon"><%= link_to image_tag('world-music-icon.png') + "muziqala", login_path %></li>
 
-			
-			<li><%= link_to 'Login', new_session_path %></li>
-
-			<li><%= link_to 'Login via Facebook', "/auth/facebook" %></li>
-			<li><%= link_to 'Sign in with Spotify', '/auth/spotify' %></li>
-
-		<% end %>
+		
+			<% if session['auth'] %>
+				<li><%= link_to 'Profile', "/auth/facebook" %></li>
+				<li><%= link_to 'Logout', auth_logout_path, method: :delete %></li>
+			<% else %>
+				<li id="sign_in"><%= link_to 'Sign in with Spotify', '/auth/spotify' %></li>
+			<% end %>
+		
 	</ul>
+	<div id="full_search">
+		
+			  
+		<%= form_tag artists_path, method: "get", html: { class: "form" } do %>
+			 
+			<div class="form-group col-xs-4" class="search">
+			   <div id="search_select">
+			   		<%= select_tag(:search, options_for_select([['All', "all"], ['Artist', "artist"], ['Album', "album"], ['Track', "track"]], selected: :search, class: "search_select1" )) %>
+			   </div>
+			   <div id="search_box">
+			   		<%= text_field_tag(:search_keywords, "", placeholder: "Enter keywords", class: "form-control") %>
+			   </div>
+			   <div id="submit">
+			   		<%= submit_tag "Search", class: "btn btn-primary" %>
+			   </div>
+			</div>
+		 	
+	<% end %>
+	</div>
 </nav>
+				<!-- <div class="dropdown"> -->
+				  <!-- <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				    Dropdown
+				    <span class="caret"></span>
+				  </button> -->
+				<!--   <select class="form-control">
+					  <option>Artist</option>
+					  <option>Album</option>
+					  <option>Track</option>
+				  </select> -->
 
-<%= form_tag artists_path, method: "get", html: { class: "form" } do %>
- <div class="form-group col-xs-4">
-   <%= text_field_tag(:search_keywords, "", placeholder: "Enter keywords", class: "form-control") %>
-   <%= submit_tag "Search", class: "btn btn-primary" %>
-   all: <%= radio_button_tag :search, type = "all" %>
-   artist: <%= radio_button_tag :search, type = "artist"  %>
-   album: <%= radio_button_tag :search, type = "album"  %>
-   track title: <%= radio_button_tag :search, type = "track"  %>
- </div>
-<% end %>
+
+				  <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				    <li><a href="#">all: <%= radio_button_tag :search, type = "all" %></a></li>
+				    <li><a href="#">artist: <%= radio_button_tag :search, type = "artist"  %></a></li>
+				    <li><a href="#">album: <%= radio_button_tag :search, type = "album"  %></a></li>
+				    <li><a href="#">track title: <%= radio_button_tag :search, type = "track"  %></a></li>
+				  </ul> -->
+				<!-- </div> -->
+				<!-- all: <%= radio_button_tag :search, type = "all" %>
+			   artist: <%= radio_button_tag :search, type = "artist"  %>
+			   album: <%= radio_button_tag :search, type = "album"  %>
+			   track title: <%= radio_button_tag :search, type = "track"  %> --> 
+			   
+
+			   
+		
+
+
 
 <%= yield %>
 
