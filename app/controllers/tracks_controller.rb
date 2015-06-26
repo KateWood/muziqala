@@ -8,8 +8,13 @@ class TracksController < ApplicationController
     end
 
     def create
-        @track = Track.new(params[:id])
-        @track.save
+        @track = RSpotify::Track.find_by(params[:id])
+        if Track.where(:spotify_id => @track["id"]).first
+            redirect_to artist_show_path
+        else
+            @track = Track.create(:spotify_id => ###)
+            redirect_to artist_show_path
+        end
     end
 
 end
