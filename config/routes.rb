@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post 'playlists' => 'playlists#create'
   get 'playlists/new' => 'playlists#new', as: :new_playlist
   get 'playlists/:id' => 'playlists#show', as: :playlist
+  delete 'playlists/:id' => 'playlists#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
