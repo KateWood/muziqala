@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   get 'tracks/index'
-
   get 'tracks/new'
 
   get 'artists' => 'artists#index'
@@ -9,10 +8,6 @@ Rails.application.routes.draw do
 
   get "users" => "users#index"
   get "users/:id" => "users#show"
-  
-  get "login" => "sessions#new"
-  post "login" => "sessions#create", as: :new_session
-  delete "logout" => "sessions#destroy"
   
   get "sessions/show"
   get "/auth/:provider/callback" => "sessions#create_auth"
