@@ -23,7 +23,7 @@
 .search {
     margin: 5 auto 0 500px;
     overflow: auto;
-    width: 1200px;
+    width: 1500px;
 }
 #icon {
 	background: url("img_flwr.gif");
@@ -39,4 +39,22 @@
 }
 #pic1 {
 	margin-top: -180px;
+}
+#search_select {
+	margin-top: 0px;
+	height:2px;
+	width:18px;
+}
+.search_select1 {
+	height:20px;
+}
+#search_box {
+	margin-left: 70px;
+}
+#submit {
+	margin-left:450px;
+	margin-top: -35px;
+}
+#full_search {
+	margin-top: 20px !important;
 }
