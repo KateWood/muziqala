@@ -4,8 +4,6 @@ Rails.application.routes.draw do
 
   get 'tracks/new'
 
-  get 'tracks/create'
-
   get 'artists' => 'artists#index'
   get 'artists/:id' => 'artists#show', as: 'artist'
 
