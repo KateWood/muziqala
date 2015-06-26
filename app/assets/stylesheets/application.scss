@@ -20,11 +20,11 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-.search {
+/*.search {
     margin: 5 auto 0 500px;
     overflow: auto;
     width: 1500px;
-}
+}*/
 #icon {
 	background: url("img_flwr.gif");
     background-size: 80px 60px;
@@ -57,4 +57,11 @@
 }
 #full_search {
 	margin-top: 20px !important;
+}
+
+#search {
+	-webkit-appearance: menulist-button;
+	height: 34px; 
+	width: 70px;
+	margin-top: 2px;
 }
