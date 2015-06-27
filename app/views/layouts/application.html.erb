@@ -49,7 +49,9 @@
 	<% end %>
 	<% if session[:user_id] %>
 		<div id="usernav"><%= current_user.display_name %></div>
-		<img id="navpic" src="<%= current_user.image_url %>" />
+		<div>
+			<img id="navpic" src="<%= current_user.image_url %>" />
+		</div>
 	<% end %>
 	</div>
 </nav>
