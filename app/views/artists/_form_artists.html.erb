@@ -1,7 +1,8 @@
 <h1 class="page-header">Artists Matching <%= params[:search_keywords] %></h1>
 <ul>
  <% @artists.each do |artist| %>
-   <li><%= link_to artist.name, artist_path(artist.id, type: "artist") %></li>
+   <li id="artists_results"><%= link_to artist.name, artist_path(artist.id, type: "artist") %></li>
+   <hr>
  <% end %>
 </ul>
 
