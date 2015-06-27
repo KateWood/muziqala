@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'tracks' => 'tracks#index'
   get 'tracks/new' => 'tracks#new'
-  post 'tracks' => 'tracks#create'
+  post 'tracks' => 'tracks#create', as: :create_track
 
   get 'artists' => 'artists#index'
   get 'artists/:id' => 'artists#show', as: 'artist'
