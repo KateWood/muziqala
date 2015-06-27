@@ -48,8 +48,8 @@
 		 	
 	<% end %>
 	<% if session[:user_id] %>
-		<li><div id="usernav"><%= link_to current_user.display_name, user_path(current_user) %></div></li>
-		<img id="navpic" src="<%= current_user.image_url %>" />
+	<div id="usernav"><%= current_user.display_name %></div>
+	<img id="navpic" src="<%= current_user.image_url %>" />
 	<% end %>
 	</div>
 </nav>
