@@ -7,9 +7,15 @@ class TracksController < ApplicationController
     	@track = Track.new
     end
 
-    def create id
-        @track = Track.create(:spotify_id => id)
-        redirect_to artist_show_path
+    def create
+        @track = Track.create(track_params)
+        redirect_to playlists_path
+    end
+
+
+private
+    def track_params
+        params.require(:track).permit(:spotify_id)
     end
 
 end
