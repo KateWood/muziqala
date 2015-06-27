@@ -48,8 +48,19 @@
 		 	
 	<% end %>
 	<% if session[:user_id] %>
-		<div id="usernav"><%= current_user.display_name %></div>
-		<img id="navpic" src="<%= current_user.image_url %>" />
+		
+		
+		<div id="user_dropdown" class="dropdown">
+		  <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+		    <div ><%= current_user.display_name %></div>
+		    <img id="navpic" src="<%= current_user.image_url %>" />
+		    <span class="caret"></span>
+		  </a>
+
+		  <ul class="dropdown-menu" aria-labelledby="dLabel">
+		    <li id="profilebtn"><%= link_to 'Profile', user_path(current_user) %></li>
+		  </ul>
+		</div>
 	<% end %>
 	</div>
 </nav>
