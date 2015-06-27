@@ -50,6 +50,9 @@
 .search_select1 {
 	height:20px;
 }
+body {
+	width:1400px;
+}
 #search_box {
 	margin-left: 70px;
 }
@@ -82,7 +85,7 @@
 #usernav {
   margin-bottom: -3px;
   margin-left: 88%;
-  color: grey !important;
+  color: grey;
 }
 #navpic {
   float: right;
