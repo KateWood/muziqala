@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post "/auth/login" => "sessions#create_auth"
   delete "/auth/logout" => "sessions#destroy_auth"
 
-  get 'playlists/index'
+  get 'playlists' => 'playlists#index'
   post 'playlists' => 'playlists#create'
   get 'playlists/new' => 'playlists#new', as: :new_playlist
   get 'playlists/:id' => 'playlists#show', as: :playlist
