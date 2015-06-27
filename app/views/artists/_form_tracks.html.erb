@@ -1,7 +1,7 @@
 <h1 class="page-header">Song Titles Matching <%= params[:search_keywords] %></h1>
 <ul>
  <% @tracks.each do |track| %>
-   <li><%= track.artists[0].name%> | <%= track.name %> | <%= link_to 'Preview Track', track.preview_url %> | <%= link_to 'Add to playlist', tracks_path %> </li>
+   <li><%= track.artists[0].name%> | <%= track.name %> | <%= track.id %> | <%= link_to 'Preview Track', track.preview_url %> | <%= link_to 'Add to playlist', create_track_path(track.id) %> | <%= track.inspect %> </li>
  <% end %>
 </ul>
 
