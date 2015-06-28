@@ -12,7 +12,7 @@ feature "Create and Delete Playlists" do
     scenario "deletes a playlist" do
         playlist = FactoryGirl.create(:playlist)
         visit playlists_path
-        first(:link, "Destroy").click
+        first(:link, "Delete this playlist").click
         expect(page).not_to have_content(playlist)
     end
 end
