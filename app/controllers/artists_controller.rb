@@ -20,6 +20,7 @@ class ArtistsController < ApplicationController
         @track = Track.new
       elsif params[:search] == "all"
         @all
+        @track = Track.new
       # if !params[:artist_name].empty?
       #  @artists = RSpotify::Artist.search(params[:artist_name])
       else
