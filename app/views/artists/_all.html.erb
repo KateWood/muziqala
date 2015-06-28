@@ -1,0 +1,17 @@
+<h1 class="page-header">All Results Matching <%= params[:search_keywords] %></h1>
+<ul>
+	<% @all.each do |all| %>
+		<li>
+			<%= all.artists[0].name%> | <%= all.name %> |
+				<% if all.type == "track" %>
+					<%= form_for @track do |f| %>
+						<% f.label :spotify_id %>
+						<%= f.hidden_field :spotify_id, :value => all.id %>
+						<%= f.submit 'Add to Playlist' %>
+					<% end %>
+				<% end %>
+		</li>
+	<% end %>
+</ul>
+
+<%= link_to "Back", :back %>

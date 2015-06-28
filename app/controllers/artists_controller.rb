@@ -20,6 +20,7 @@ class ArtistsController < ApplicationController
         @track = Track.new
       elsif params[:search] == "all"
         @all
+        @track = Track.new
       # if !params[:artist_name].empty?
       #  @artists = RSpotify::Artist.search(params[:artist_name])
       else
@@ -35,8 +36,10 @@ class ArtistsController < ApplicationController
 
     if params[:type] == "artist"
       @artist = RSpotify::Artist.find(params[:id])
+      @track = Track.new
     elsif  params[:type] == "album"
       @album = RSpotify::Album.find(params[:id])
+      @track = Track.new
     elsif  params[:type] == "track"
       @track = RSpotify::Track.find(params[:id])
     # elsif params[:type] == "all"
