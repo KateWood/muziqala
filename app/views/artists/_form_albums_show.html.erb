@@ -1,20 +1,23 @@
 <h1 class="page-header"><%= @album.name %></h1>
+<h3>by <%= @album.artists[0].name %></h3>
+ 
+
  <%# @album.artists.each do |artist| %>
   <h3><%#= artist.name %></h3>
   <%#=@album.inspect%>
-  <ul>
+  <table class="table table-striped">
     <% @album.tracks.each do |track| %>
-      <li>
-        <%= track.track_number %> |
-        <%= track.artists[0].name %> |
-        <%= track.name %> |
-        <%= track.duration_ms %> |
-        <audio controls style="width:45px">
+      <tr>
+        <td><%= track.track_number %></td>
+        <td><%= track.name %></td>
+        <td><%= track.duration_ms %></td>
+        <td><audio controls style="width:45px">
           <source src="<%= track.preview_url %>">
-        </audio>
-      </li>
-    <% end %>
-  </ul>
+        </audio></td>
+      </tr>
+      
+    <% end %>  
+  </table>
  <%#  end %>
 
  <%= link_to "Back", :back %>

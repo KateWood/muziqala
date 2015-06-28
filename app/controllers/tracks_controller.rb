@@ -12,7 +12,6 @@ class TracksController < ApplicationController
         redirect_to playlists_path
     end
 
-
 private
     def track_params
         params.require(:track).permit(:spotify_id)

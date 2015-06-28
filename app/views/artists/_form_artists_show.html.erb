@@ -1,19 +1,18 @@
 <h1 class="page-header"><%= @artist.name %></h1>
 <% @artist.albums(country: 'US').each do |album| %>
  <h3><%= album.name %></h3>
- <ul>
-   <% album.tracks.each do |track| %>
-     <li>
-       <%= track.track_number %> |
-       <%= @artist.name %> |
-       <%= track.name %> |
-       <%= track.duration_ms %> |
-       <audio controls style="width:45px">
-        <source src="<%= track.preview_url %>">
-        </audio>
-     </li>
-   <% end %>
- </ul>
+ <table class="table table-striped">
+    <% album.tracks.each do |track| %>
+      <tr>
+        <td><%= track.track_number %></td>
+        <td><%= track.name %></td>
+        <td><%= track.duration_ms %></td>
+        <td><audio controls style="width:45px">
+          <source src="<%= track.preview_url %>">
+        </audio></td>
+      </tr>
+    <% end %>  
+  </table>
 <% end %>
 
 <%= link_to "Back", :back %>

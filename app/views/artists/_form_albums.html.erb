@@ -1,7 +1,9 @@
 <h1 class="page-header">Albums Matching <%= params[:search_keywords] %></h1>
 <ul>
  <% @albums.each do |album| %>
-   <li><%= album.artists[0].name %> | <%= album.name %> | <%= link_to "Show", artist_path(album.id, type: "album") %></li>
+   <li><%= link_to album.artists[0].name, artist_path(album.artists[0].id, type: "artist") %></li>
+   <li><%= link_to album.name, artist_path(album.id, type: "album") %></li>
+   <hr>
  <% end %>
 </ul>
 
