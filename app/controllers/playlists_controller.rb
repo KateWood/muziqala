@@ -9,6 +9,7 @@ class PlaylistsController < ApplicationController
 
   def show
     @playlist = Playlist.find(params[:id])
+    @tracks = Track.all
   end
   
   def create
