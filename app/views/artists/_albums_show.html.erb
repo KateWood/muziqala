@@ -13,7 +13,14 @@
         <td><%= track.duration_ms %></td>
         <td><audio controls style="width:45px">
           <source src="<%= track.preview_url %>">
-        </audio></td>
+        </audio>
+        </td>
+        <td><%= form_for @track do |f| %>
+          <% f.label :spotify_id %>
+          <%= f.hidden_field :spotify_id, :value => track.id %>
+          <%= f.submit 'Add to Playlist' %>
+        <% end %>
+        </td>
       </tr>
       
     <% end %>  
