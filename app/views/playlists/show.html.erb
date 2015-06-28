@@ -6,3 +6,9 @@
   <strong><%= @playlist.name %></strong>
 </p>
 
+<h2>Add songs to <%= "#{@playlist.name}" %>: </h2>
+
+<% @tracks.each do |track| %>
+	<%= track.spotify_id %>
+	<br>
+<% end %>
