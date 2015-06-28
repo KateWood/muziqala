@@ -12,12 +12,12 @@ class SessionsController < ApplicationController
 		if User.where(:spotify_id => @auth["info"]["id"]).first
 			@user = User.where(:spotify_id => @auth["info"]["id"]).first
 		else
-			if @auth["info"]["images"][0]["url"]
+			if @auth["info"]["images"][0]["url"] == ""
 				@user = User.create(
 				:display_name => @auth["info"]["display_name"],
 				:token => @auth["credentials"]["token"],
 				:refresh_token => @auth["credentials"]["refresh_token"],
-				:image_url => @auth["info"]["images"][0]["url"],
+				:image_url => 'muziqala_logo.jpq',
 				:spotify_id => @auth["info"]["id"],
 				:user_uri => @auth["info"]["uri"]
 				)
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
 				:display_name => @auth["info"]["display_name"],
 				:token => @auth["credentials"]["token"],
 				:refresh_token => @auth["credentials"]["refresh_token"],
-				:image_url => 'muziqala_logo.jpq',
+				:image_url => @auth["info"]["images"][0]["url"],
 				:spotify_id => @auth["info"]["id"],
 				:user_uri => @auth["info"]["uri"]
 				)
