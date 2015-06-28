@@ -9,6 +9,6 @@
 <h2>Add songs to <%= "#{@playlist.name}" %>: </h2>
 
 <% @tracks.each do |track| %>
-	<%= track.spotify_id %>
+	<%= track.track_info %>
 	<br>
 <% end %>
