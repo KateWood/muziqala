@@ -9,7 +9,9 @@
         <%= track.artists[0].name %> |
         <%= track.name %> |
         <%= track.duration_ms %> |
-        <%= link_to 'Preview Track', track.preview_url %> |
+        <audio controls style="width:45px">
+          <source src="<%= track.preview_url %>">
+        </audio>
       </li>
     <% end %>
   </ul>

@@ -1,7 +1,9 @@
 <h1 class="page-header">Song Titles Matching <%= params[:search_keywords] %></h1>
 <ul>
 	<% @tracks.each do |track| %>
-		<li><%= track.artists[0].name%> | <%= track.name %> | <%= track.id %> | <%= link_to 'Preview Track', track.preview_url %> |
+		<li><%= track.artists[0].name%> | <%= track.name %> | <%= track.id %> | <audio controls style="width:45px">
+        <source src="<%= track.preview_url %>">
+        </audio>
 			<%= form_for @track do |f| %>
 				<% f.label :spotify_id %>
 				<%= f.hidden_field :spotify_id, :value => track.id %>
