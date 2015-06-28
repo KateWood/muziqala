@@ -9,6 +9,6 @@
 <h2>Add songs to <%= "#{@playlist.name}" %>: </h2>
 
 <% @tracks.each do |track| %>
-	<iframe src="https://embed.spotify.com/?uri=spotify:track:<%= track.spotify_id %>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+	<iframe src="https://embed.spotify.com/?uri=spotify:track:<%= track.spotify_id %>" width="250" height="80" frameborder="0" allowtransparency="true"></iframe>
     <br>
 <% end %>
