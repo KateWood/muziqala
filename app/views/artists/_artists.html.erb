@@ -1,10 +1,21 @@
-<h1 class="page-header">Artists Matching <%= params[:search_keywords] %></h1>
-<ul>
- <% @artists.each do |artist| %>
-   <li id="artists_results"><%= link_to artist.name, artist_path(artist.id, type: "artist") %></li>
-   <hr>
- <% end %>
-</ul>
+	<section class="paralax2" data-type="background" data-speed="10">
+		<div class="artist_background">
+			<h1 class="page-header">Artists Matching <%= params[:search_keywords] %></h1>
+			
+			<table class="table">
+		        <tr>
+		           <th>Artists</th>
+		        </tr>
+		        <% @artists.each do |artist| %>
+		          <tr>
+		            <td><%= link_to artist.name, artist_path(artist.id, type: "artist") %></td>
+		          </tr>
+		          
+		        <% end %>  
+	     	</table>
+	    </div>
 
 
-<%= link_to "Back", :back %>
+			<%= link_to "Back", :back %>
+	</section>	
+	

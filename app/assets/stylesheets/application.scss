@@ -25,11 +25,18 @@
     overflow: auto;
     width: 1500px;
 }*/
+html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 .add_playlist {
 	color: black;
 }
-.search_results {
-	color: white;
+.search_results_show {
+	color: white !important;
 }
 #icon {
 	background: url("img_flwr.gif");
