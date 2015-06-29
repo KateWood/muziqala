@@ -1,8 +1,24 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get 'tracks' => 'tracks#index'
+    get 'tracks/new' => 'tracks#new'
+    post 'tracks' => 'tracks#create', as: :create_track
 
+    get 'playlists' => 'playlists#index'
+    post 'playlists' => 'playlists#create'
+    get 'playlists/new' => 'playlists#new', as: :new_playlist
+    get 'playlists/:id' => 'playlists#show', as: :playlist
+    delete 'playlists/:id' => 'playlists#destroy'
+  end
   get 'tracks' => 'tracks#index'
   get 'tracks/new' => 'tracks#new'
   post 'tracks' => 'tracks#create', as: :create_track
+
+  get 'playlists' => 'playlists#index'
+  post 'playlists' => 'playlists#create'
+  get 'playlists/new' => 'playlists#new', as: :new_playlist
+  get 'playlists/:id' => 'playlists#show', as: :playlist
+  delete 'playlists/:id' => 'playlists#destroy'
 
   get 'artists' => 'artists#index'
   get 'artists/:id' => 'artists#show', as: 'artist'
@@ -15,16 +31,12 @@ Rails.application.routes.draw do
   post "/auth/login" => "sessions#create_auth"
   delete "/auth/logout" => "sessions#destroy_auth"
 
-  get 'playlists' => 'playlists#index'
-  post 'playlists' => 'playlists#create'
-  get 'playlists/new' => 'playlists#new', as: :new_playlist
-  get 'playlists/:id' => 'playlists#show', as: :playlist
-  delete 'playlists/:id' => 'playlists#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root "sessions#new"
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
