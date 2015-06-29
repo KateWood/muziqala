@@ -1,17 +1,17 @@
 // Place all the styles related to the artists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.home { 
-  background: url(vinyl.jpg) 50% 0 repeat fixed; min-height: 1000px; 
+.paralax1 { 
+  background: url(vinyl.jpg) 100% repeat-y fixed; min-height: 100%; 
   background-size: cover;
-  height: 5000px; 
+  height: 100%; 
   margin: 0 auto; 
   width: 100%; 
   max-width: 1920px; 
   position: relative; 
 }
  
-.home article { 
+.paralax1 article { 
   height: 458px; 
   position: absolute; 
   text-align: center; 
@@ -19,3 +19,19 @@
   width: 100%; 
 }
  
+.paralax2 { 
+  background: url(dj.jpg) 50%  0 repeat fixed; min-height: 1000px; 
+  background-size: cover;
+  height: 5000px; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative; 
+}
+.paralax2 article { 
+  height: 458px; 
+  position: absolute; 
+  text-align: center; 
+  top: 150px; 
+  width: 100%; 
+}
