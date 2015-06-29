@@ -1,7 +1,7 @@
 // Place all the styles related to the artists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#home { 
+.home { 
   background: url(vinyl.jpg) 50% 0 repeat fixed; min-height: 1000px; 
   background-size: cover;
   height: 5000px; 
@@ -11,7 +11,7 @@
   position: relative; 
 }
  
-#home article { 
+.home article { 
   height: 458px; 
   position: absolute; 
   text-align: center; 

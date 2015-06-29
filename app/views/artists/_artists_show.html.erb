@@ -1,41 +1,38 @@
+<section class="home" data-type="background" data-speed="10">   
+  <div class="search_results">
+    <h1 class="page-header"><%= @artist.name %></h1>                         
 
 
-
-<section id="home" data-type="background" data-speed="10">   
-<div class="search_results">
-  <h1 class="page-header"><%= @artist.name %></h1>                         
-
-
-  <% @artist.albums(country: 'US').each do |album| %>
-   <h3><%= album.name %></h3>
-   <table class="table ">
-      <tr>
-              <th>Track</th>
-              <th>Song</th>
-              <th>Time</th>
-              <th>Play</th>
-              <th>Add to Playlist</th>
-      </tr>
-      <% album.tracks.each do |track| %>
+    <% @artist.albums(country: 'US').each do |album| %>
+     <h3><%= album.name %></h3>
+     <table class="table ">
         <tr>
-          <td><%= track.track_number %></td>
-          <td><%= track.name %></td>
-          <td><%= track.duration_ms %></td>
-          <td><audio controls style="width:45px">
-            <source src="<%= track.preview_url %>">
-          </audio>
-          </td>
-          <td><%= form_for @track do |f| %>
-            <% f.label :spotify_id %>
-            <%= f.hidden_field :spotify_id, :value => track.id %>
-            <%= f.submit 'Add to Playlist', class: "add_playlist" %>
-          <% end %>
-          </td>
+                <th>Track</th>
+                <th>Song</th>
+                <th>Time</th>
+                <th>Play</th>
+                <th>Add to Playlist</th>
         </tr>
-      <% end %>  
-    </table>
-  <% end %>
+        <% album.tracks.each do |track| %>
+          <tr>
+            <td><%= track.track_number %></td>
+            <td><%= track.name %></td>
+            <td><%= track.duration_ms %></td>
+            <td><audio controls style="width:45px">
+              <source src="<%= track.preview_url %>">
+            </audio>
+            </td>
+            <td><%= form_for @track do |f| %>
+              <% f.label :spotify_id %>
+              <%= f.hidden_field :spotify_id, :value => track.id %>
+              <%= f.submit 'Add to Playlist', class: "add_playlist" %>
+            <% end %>
+            </td>
+          </tr>
+        <% end %>  
+      </table>
+    <% end %>
 
-  <%= link_to "Back", :back %>
-</div>
+    <%= link_to "Back", :back %>
+  </div>
 </section>
