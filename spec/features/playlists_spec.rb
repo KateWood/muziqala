@@ -2,13 +2,7 @@ require 'rails_helper'
 
 feature "Create and Delete Playlists" do
 
-    # scenario "creates a new playlist" do
-    #     visit new_playlist_path
-    #     fill_in "playlist_name", with: "New Playlist"
-    #     expect(click_button "Create Playlist").to change(Playlist, :count).by(1)
-    # end
-
-    scenario "add a new playlist to database" do
+    scenario "creates a new playlist" do
         visit new_playlist_path
         fill_in "playlist_name", with: "New Playlist"
         click_button "Create Playlist"
