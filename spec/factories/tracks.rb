@@ -1,10 +1,6 @@
 FactoryGirl.define do
   factory :track do
-    track_name "MyString"
-	track_uri "MyString"
-	artist_name "MyString"
-	album nil
-	duraction_ms 1
+    spotify_id "130reu8f8jwefwg9v0aeh1"
   end
 
 end

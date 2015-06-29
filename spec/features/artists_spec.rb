@@ -24,4 +24,12 @@ feature "Search Spotify" do
       click_button "Search"
       expect(page).to have_content("Song Titles Matching bohemian rhapsody")
     end
+
+    scenario "returns search results for all" do
+      visit root_path
+      fill_in "search_keywords", with: "queen"
+      select 'All', from: "search"
+      click_button "Search"
+      expect(page).to have_content("All Results Matching queen")
+    end
 end
