@@ -44,3 +44,23 @@
 	margin-left: 50%;
 	
 }
+.paralax3 { 
+  background: url(vinyl3.jpg) fixed; min-height: 900px; 
+  height: 100%; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+}
+ 
+.paralax3 article { 
+  height: 458px; 
+  position: absolute; 
+  text-align: center; 
+  top: 150px; 
+  width: 100%; 
+}

@@ -1,15 +1,15 @@
-
-		<h1 class="page-header">Artists Matching <%= params[:search_keywords] %></h1>
+<section class="paralax3" data-type="background" data-speed="10">
+		<h1 class="page-header">Albums Matching <%= params[:search_keywords] %></h1>
 		
-		<table class="table">
+		<table class="table table-striped">
         <tr>
-           <th>Albums</th>
            <th>Artists</th>
+           <th>Albums</th>
         </tr>
         <% @albums.each do |album| %>
           <tr>
-            <td><%= link_to album.name, artist_path(album.id, type: "album") %></td>
             <td><%= link_to album.artists[0].name, artist_path(album.artists[0].id, type: "artist") %></td>
+            <td><%= link_to album.name, artist_path(album.id, type: "album") %></td>
           </tr>
           
         <% end %>  
@@ -18,7 +18,7 @@
 
 
 		<%= link_to "Back", :back %>
-
+</section>
 
 
 
