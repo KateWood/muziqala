@@ -1,5 +1,12 @@
 <h1 class="page-header">Song Titles Matching <%= params[:search_keywords] %></h1>
 <table class="table">
+    <tr>
+            <th>Song</th>
+            <th>Artist</th>
+            <th>Time</th>
+            <th>Play</th>
+            <th>Add to Playlist</th>
+    </tr>
     <% @tracks.each do |track| %>
       <tr>
         <td><%= track.name %></td>
