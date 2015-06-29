@@ -2,6 +2,13 @@
 <% @artist.albums(country: 'US').each do |album| %>
  <h3><%= album.name %></h3>
  <table class="table table-striped">
+    <tr>
+            <th>Track</th>
+            <th>Song</th>
+            <th>Time</th>
+            <th>Play</th>
+            <th>Add to Playlist</th>
+    </tr>
     <% album.tracks.each do |track| %>
       <tr>
         <td><%= track.track_number %></td>
