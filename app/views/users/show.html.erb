@@ -2,9 +2,10 @@
 <div id="usershow">
 	<div>
 		<img id="userpic" src="<%= @user.image_url %>" width="150" />
-		<div >
-   			<%= @user.display_name %>
-   		</div>
+		<h3 class="username">
+   			<%= @user.display_name %><%= image_tag('musicnote.png', class: "mnote") %>
+   		</h3>
+   		
 	</div>
 
 	</div>
