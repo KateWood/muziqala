@@ -1,10 +1,24 @@
-<h1 class="page-header">Albums Matching <%= params[:search_keywords] %></h1>
-<ul>
- <% @albums.each do |album| %>
-   <li><%= link_to album.artists[0].name, artist_path(album.artists[0].id, type: "artist") %></li>
-   <li><%= link_to album.name, artist_path(album.id, type: "album") %></li>
-   <hr>
- <% end %>
-</ul>
 
-<%= link_to "Back", :back %>
+		<h1 class="page-header">Artists Matching <%= params[:search_keywords] %></h1>
+		
+		<table class="table">
+        <tr>
+           <th>Albums</th>
+           <th>Artists</th>
+        </tr>
+        <% @albums.each do |album| %>
+          <tr>
+            <td><%= link_to album.name, artist_path(album.id, type: "album") %></td>
+            <td><%= link_to album.artists[0].name, artist_path(album.artists[0].id, type: "artist") %></td>
+          </tr>
+          
+        <% end %>  
+      </table>
+    
+
+
+		<%= link_to "Back", :back %>
+
+
+
+

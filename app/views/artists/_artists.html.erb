@@ -1,19 +1,21 @@
+	<section class="paralax2" data-type="background" data-speed="10">
+		<div class="artist_background">
+			<h1 class="page-header">Artists Matching <%= params[:search_keywords] %></h1>
+			
+			<table class="table">
+		        <tr>
+		           <th>Artists</th>
+		        </tr>
+		        <% @artists.each do |artist| %>
+		          <tr>
+		            <td><%= link_to artist.name, artist_path(artist.id, type: "artist") %></td>
+		          </tr>
+		          
+		        <% end %>  
+	     	</table>
+	    </div>
 
-		<h1 class="page-header">Artists Matching <%= params[:search_keywords] %></h1>
-		
-		<table class="table">
-        <tr>
-           <th>Artists</th>
-        </tr>
-        <% @artists.each do |artist| %>
-          <tr>
-            <td><%= link_to artist.name, artist_path(artist.id, type: "artist") %></td>
-          </tr>
-          
-        <% end %>  
-      </table>
-    
 
-
-		<%= link_to "Back", :back %>
+			<%= link_to "Back", :back %>
+	</section>	
 	

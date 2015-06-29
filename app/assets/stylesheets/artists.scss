@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .paralax1 { 
-  background: url(vinyl.jpg) 100% repeat-y fixed; min-height: 100%; 
+  background: url(vinyl.jpg) 100%  0 repeat fixed; min-height: 100%; 
   background-size: cover;
   height: 100%; 
   margin: 0 auto; 
@@ -18,20 +18,29 @@
   top: 150px; 
   width: 100%; 
 }
- 
 .paralax2 { 
-  background: url(dj.jpg) 50%  0 repeat fixed; min-height: 1000px; 
-  background-size: cover;
-  height: 5000px; 
+  background: url(rockn.jpg) fixed; min-height: 100%; 
+  height: 100%; 
   margin: 0 auto; 
   width: 100%; 
   max-width: 1920px; 
-  position: relative; 
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
 }
+ 
 .paralax2 article { 
   height: 458px; 
   position: absolute; 
   text-align: center; 
   top: 150px; 
   width: 100%; 
+}
+ 
+.artist_background {
+	
+	margin-left: 50%;
+	
 }
