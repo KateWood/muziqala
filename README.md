@@ -14,11 +14,11 @@ Users can search for music from any of the services they have linked to their ac
 
 * PostgreSQL Database
 
-* Bootstrap-SASS ~> 3.3.5
+* Bootstrap-SASS ~> 3.3.4
 
 * Testing: RSpec, FactoryGirl, Capybara, Travis CI
 
-#### Build Your Meaning Profile
+#### Connect with Spotify
 
 So, how does Applied Meaning work? I'm glad you asked.
 
