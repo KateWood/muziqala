@@ -18,6 +18,10 @@ Users can search for music from any of the services they have linked to their ac
 
 * Testing: RSpec, FactoryGirl, Capybara, Travis CI
 
+#### See Muziqala in Action
+
+[Muziqala on Heroku](https://muziqala.herokuapp.com/)
+
 #### Getting Started
 
 If you fork this repo, you must run `bundle install` and `rake db:migrate` in order for the app to function properly.
