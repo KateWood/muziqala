@@ -41,13 +41,10 @@ Now that you're signed in, it's time to search for your favorite music. Just cho
 Your search results will appear on a new page.
 <br>
 ![Search Results](/app/assets/images/searchresults.png)
-<br>
-The user enters the sub category name, importance, and meaning esteem. 
 
-![Meaning Category with Sub Categories](/app/assets/images/catnobehav.png)
-Once all of the user's sub categories are added, it's time to add behaviors to each sub category by clicking this button:
+If you want to add a track to the community playlist, just click this button:
 <br>
-![New Behavior Button](/app/assets/images/newbehavbtn.png)
+![Add to Playlist Button](/app/assets/images/addtoplaylist.png)
 
 The New Behavior form will appear in a modal.
 <br>
