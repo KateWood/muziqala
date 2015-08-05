@@ -1,21 +1,27 @@
-<h1 class="page-header">All Results Matching <%= params[:search_keywords] %></h1>
-<table class="table">
-    <% @all.each do |track| %>
-      <tr>
-        <td><%= track.name %></td>
-        <td><%= track.artists[0].name%></td>
-        <td><%= track.duration_ms %></td>
-		<td><audio controls style="width:45px">
-        <source src="<%= track.preview_url %>">
-        </audio></td>
-        <td><%= form_for @track do |f| %>
-				<% f.label :spotify_id %>
-				<%= f.hidden_field :spotify_id, :value => track.id %>
-				<%= f.submit 'Add to Playlist' %>
-			<% end %></td>
-		
-       </tr>
-    <% end %> 
-</table>
+<section class="paralax2" data-type="background" data-speed="10">
+    <div class="artist_background">
 
-<%= link_to "Back", :back %>
+        <h1 class="page-header">All Results Matching <%= params[:search_keywords] %></h1>
+        <table class="table">
+            <% @all.each do |track| %>
+              <tr>
+                <td><%= track.name %></td>
+                <td><%= track.artists[0].name%></td>
+                <td><%= track.duration_ms %></td>
+        		<td><audio controls style="width:45px">
+                <source src="<%= track.preview_url %>">
+                </audio></td>
+                <td><%= form_for @track do |f| %>
+        				<% f.label :spotify_id %>
+        				<%= f.hidden_field :spotify_id, :value => track.id %>
+        				<%= f.submit 'Add to Playlist' %>
+        			<% end %></td>
+        		
+               </tr>
+            <% end %> 
+        </table>
+    </div>
+
+
+            <%= link_to "Back", :back %>
+</section>
