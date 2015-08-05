@@ -34,10 +34,9 @@ Before enjoying all that Muziqala has to offer, you must authenticate with Spoti
 <br>
 ![Connect to Spotify Button](/app/assets/images/connectbutton.png)
 
-![Empty Meaning Category](/app/assets/images/catnosubs.png)
-Now that you have a meaning category set up, it's time to add sub categories. Just click the plus button:
+Now that you're signed in, it's time to search for your favorite music. Just choose a category from the drop down and type in what you want to find:
 <br>
-![New Sub Category Button](/app/assets/images/newsubbtn.png)
+![Search](/app/assets/images/search.png)
 
 The New Sub Category form will appear in a modal.
 <br>
