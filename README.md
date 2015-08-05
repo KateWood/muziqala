@@ -26,19 +26,13 @@ Muziqala uses Spotify authentication, so set up your own version of the app on F
 
 #### Connect with Spotify
 
-So, how does Applied Meaning work? I'm glad you asked.
-
-Each user creates meaning categories - areas in their life that bring them meaning and happiness. Some examples are family, friends, career, health, and hobbies.
-
-Once a user has signed up on the Applied Meaning website, they can start building their meaning profile by clicking this button:
+Welcome to Muziqala!
 <br>
-![New Meaning Category Button](/app/assets/images/newcatbtn.png)
+![Muziqala Landing Page](/app/assets/images/muziqalalanding.png)
 
-The New Meaning Category form will appear in a modal.
+Before enjoying all that Muziqala has to offer, you must authenticate with Spotify.
 <br>
-![New Meaning Category Form](/app/assets/images/newcatform.png)
-<br>
-The user enters the category name, importance (how important is this?), and meaning esteem (do you feel like you put in enough effort relative to how important this is?).
+![Connect to Spotify Button](/app/assets/images/connectbutton.png)
 
 ![Empty Meaning Category](/app/assets/images/catnosubs.png)
 Now that you have a meaning category set up, it's time to add sub categories. Just click the plus button:
