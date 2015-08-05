@@ -46,16 +46,11 @@ If you want to add a track to the community playlist, just click this button:
 <br>
 ![Add to Playlist Button](/app/assets/images/addtoplaylist.png)
 
-The New Behavior form will appear in a modal.
+The song will then appear on the playlist page:
 <br>
-![New Behavior Form](/app/assets/images/newbehavform.png)
-<br>
-The user enters the behavior description and impact (how much will this behavior increase your meaning esteem for this category?).
+![Palylist](/app/assets/images/playlist.png)
 
-Now you have a Meaning Category!
-![Complete Meaning Category](/app/assets/images/complete.png)
-
-Complete this process for each important area of your life, and that will be your complete Meaning Profile.
+Now you can enjoy your favorite music on Muziqala!
 
 
 
