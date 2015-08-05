@@ -38,9 +38,9 @@ Now that you're signed in, it's time to search for your favorite music. Just cho
 <br>
 ![Search](/app/assets/images/search.png)
 
-The New Sub Category form will appear in a modal.
+Your search results will appear on a new page.
 <br>
-![New Sub Category Form](/app/assets/images/newsubform.png)
+![Search Results](/app/assets/images/searchresults.png)
 <br>
 The user enters the sub category name, importance, and meaning esteem. 
 
